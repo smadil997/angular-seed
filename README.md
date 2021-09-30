@@ -1,2 +1,3 @@
 # angular-seed
-Angular Seed Project
+
+Angular 10 Seed Project
