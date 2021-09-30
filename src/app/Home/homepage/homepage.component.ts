@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../productservice';
+import {Product} from '../../interface/Product';
+
 
 @Component({
   selector: 'app-homepage',
@@ -6,10 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  products: Product[]=[];
+  responsiveOptions:any=[];
+  constructor(private productService: ProductService) {
+    this.responsiveOptions = [
+      {
+          breakpoint: '1024px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2,
+          numScroll: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
+   }
 
-  constructor() { }
-
+	
   ngOnInit(): void {
+    this.productService.getProductsSmall().then(products => {
+			this.products = products;
+		});
   }
   
 
