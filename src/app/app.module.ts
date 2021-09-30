@@ -5,6 +5,15 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './Home/homepage/homepage.component';
 import { AppRoutingModule} from './app-routing.module';
 import { NavigationComponent } from './Home/navigation/navigation.component';
+import {HomeRoutingModule} from './Home/home-routing.module'
+
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MenubarModule } from 'primeng/menubar';
+// import { InputTextModule } from 'primeng/inputtext';
+
+// import { ButtonModule } from 'primeng/button';
+
+
 
 @NgModule({
   declarations: [
@@ -13,7 +22,7 @@ import { NavigationComponent } from './Home/navigation/navigation.component';
     NavigationComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule
+    BrowserModule,AppRoutingModule,HomeRoutingModule
   ],
   providers: [],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
